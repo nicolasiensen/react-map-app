@@ -26,13 +26,25 @@ function getTimeDistanceInMinutes (d1, d2) {
 }
 
 class RouteItem extends Component {
+  constructor (props) {
+    super(props)
+    this.handleTouchTap = this.handleTouchTap.bind(this)
+  }
+
+  handleTouchTap () {
+    this.props.onTouchTap(this.props.route)
+  }
+
   render() {
     const {route} = this.props
     const departureTime = new Date(_.head(_.head(route.segments).stops).datetime)
     const arrivalTime = new Date(_.last(_.last(route.segments).stops).datetime)
 
     return (
-      <ListItem style={{borderBottom: '1px solid', borderColor: grey300}}>
+      <ListItem
+        style={{borderBottom: '1px solid', borderColor: grey300}}
+        onTouchTap={this.handleTouchTap}
+        disabled={this.props.disabled}>
         <div>
           {
             route.type === 'car_sharing' || route.type === 'bike_sharing'
