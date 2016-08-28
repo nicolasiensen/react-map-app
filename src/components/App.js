@@ -7,7 +7,7 @@ import { grey200 } from 'material-ui/styles/colors'
 import RouteList from './RouteList'
 import RouteDetails from './RouteDetails'
 import data from './../routes.json'
-import { medium } from './../breakpoints'
+import { medium } from './../libs/breakpoints'
 
 const styles = StyleSheet.create({
   container: {

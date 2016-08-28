@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import moment from './../libs/moment';
+
 import { ListItem } from 'material-ui/List';
 import { grey300 } from 'material-ui/styles/colors'
 
@@ -18,11 +20,6 @@ function getCompanyName (company) {
     default:
       throw(new Error(`Unknown company: ${company}`));
   }
-}
-
-// TODO: replace this with a library like moment.js?
-function getTimeDistanceInMinutes (d1, d2) {
-  return `${(d2-d1)/1000/60} mins`
 }
 
 class RouteItem extends Component {
@@ -83,7 +80,7 @@ class RouteItem extends Component {
               {`${arrivalTime.getHours()}:${arrivalTime.getMinutes()}`}
             </span>
           </div>
-          <div>{getTimeDistanceInMinutes(departureTime, arrivalTime)}</div>
+          <div>{moment(arrivalTime).from(departureTime, true)}</div>
         </div>
       </ListItem>
     )
