@@ -1,26 +1,12 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import moment from './../libs/moment';
 
 import { ListItem } from 'material-ui/List';
 import { grey300 } from 'material-ui/styles/colors'
 
+import moment from './../libs/moment';
+import getCompany from './../libs/getCompany'
 import SegmentIcon from './SegmentIcon';
-
-function getCompanyName (company) {
-  switch (company) {
-    case 'drivenow':
-      return 'DriveNow';
-    case 'car2go':
-      return 'Car2Go'
-    case 'nextbike':
-      return 'Nextbike';
-    case 'callabike':
-      return 'Call a Bike';
-    default:
-      throw(new Error(`Unknown company: ${company}`));
-  }
-}
 
 class RouteItem extends Component {
   constructor (props) {
@@ -45,7 +31,7 @@ class RouteItem extends Component {
         <div>
           {
             route.type === 'car_sharing' || route.type === 'bike_sharing'
-            ? getCompanyName(route.provider)
+            ? getCompany(route.provider).display_name
             : _.startCase(route.type)
           }
         </div>
