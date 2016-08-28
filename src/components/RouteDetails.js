@@ -14,7 +14,7 @@ class RouteDetails extends Component {
     return (
       <Card>
         <CardMedia>
-          <Map id='map' style={{height: '400px'}} segments={route.segments} />
+          <Map style={{height: '400px'}} segments={route.segments} />
         </CardMedia>
         <CardText>
           <RouteItem route={route} disabled style={{marginBottom: '1rem', padding: '0 0 1rem 0'}} />

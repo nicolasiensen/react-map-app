@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Map extends Component {
   componentDidMount() {
     // TODO: add Google Maps API as a NPM package dependency, instead of loading it in index.html
-    let map = new window.google.maps.Map(document.getElementById(this.props.id), {disableDefaultUI: true});
+    let map = new window.google.maps.Map(this.refs.map, {disableDefaultUI: true});
     let bounds = new window.google.maps.LatLngBounds();
 
     this.props.segments.forEach((segment) => {
@@ -38,7 +38,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div id={this.props.id} style={this.props.style}></div>
+      <div ref='map' style={this.props.style}></div>
     )
   }
 }
