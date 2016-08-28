@@ -28,7 +28,10 @@
     "test": "jest"
   },
   "eslintConfig": {
-    "extends": "./node_modules/react-scripts/config/eslint.js"
+    "extends": "./node_modules/react-scripts/config/eslint.js",
+    "env": {
+      "jest": true
+    }
   },
   "jest": {
     "automock": false
