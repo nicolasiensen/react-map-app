@@ -22,7 +22,7 @@ function getCompanyName (company) {
 
 // TODO: replace this with a library like moment.js?
 function getTimeDistanceInMinutes (d1, d2) {
-  return `${(d2-d1)/1000/60}min`
+  return `${(d2-d1)/1000/60} mins`
 }
 
 class RouteItem extends Component {
@@ -36,13 +36,13 @@ class RouteItem extends Component {
   }
 
   render() {
-    const {route} = this.props
+    const {route, style} = this.props
     const departureTime = new Date(_.head(_.head(route.segments).stops).datetime)
     const arrivalTime = new Date(_.last(_.last(route.segments).stops).datetime)
 
     return (
       <ListItem
-        style={{borderBottom: '1px solid', borderColor: grey300}}
+        style={{borderBottom: '1px solid', borderColor: grey300, ...style}}
         onTouchTap={this.handleTouchTap}
         disabled={this.props.disabled}>
         <div>
