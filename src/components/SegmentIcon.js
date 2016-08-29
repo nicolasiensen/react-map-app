@@ -41,7 +41,7 @@ class SegmentIcon extends Component {
           { getSegmentIcon(this.props.travelMode) }
         </FontIcon>
         {
-          this.props.name && (
+          this.props.name && this.props.name !== 'Cycling' && (
             <span style={{fontSize: '0.8rem', marginTop: '0.25rem'}}>{this.props.name}</span>
           )
         }
