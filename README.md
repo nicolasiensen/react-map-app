@@ -8,10 +8,9 @@ npm start
 
 If everything goes right, you should see the project running at [http://localhost:3000/](http://localhost:3000/).
 
-# Future implementations
+# To-do
 
 ## Features
-- Add markers in the route map to show where the route starts and ends;
 - Improve the readability of the path in the map, some route colors are not easy to see;
 - Change MaterialUI theme to match Door2Door's brand colors;
 - Use Google Maps API as a NPM dependency, instead of including it into the `window` object.

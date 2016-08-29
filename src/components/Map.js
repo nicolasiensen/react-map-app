@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 class Map extends Component {
   componentDidMount() {
     // TODO: add Google Maps API as a NPM package dependency, instead of loading it in index.html
-    let map = new window.google.maps.Map(this.refs.map, {disableDefaultUI: true});
+    let map = new window.google.maps.Map(this.refs.map, {
+      disableDefaultUI: true
+    });
+
+    const lastStop = _.last(_.last(this.props.segments).stops)
+
+    new window.google.maps.Marker({
+      position: {lat: lastStop.lat, lng: lastStop.lng},
+      map: map
+    });
+
     let bounds = new window.google.maps.LatLngBounds();
 
     this.props.segments.forEach((segment) => {
