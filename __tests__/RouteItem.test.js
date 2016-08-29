@@ -9,13 +9,15 @@ import RouteItem from './../src/components/RouteItem';
 import SegmentIcon from './../src/components/SegmentIcon';
 
 const route = data.routes[0];
-let routeItem, routeItemNode;
+let routeItem, routeItemNode, onTouchTap;
 
 describe('RouteItem', () => {
   beforeEach(() => {
+    onTouchTap = jest.fn()
+
     routeItem = TestUtils.renderIntoDocument(
       <MuiThemeProvider>
-        <RouteItem route={route} />
+        <RouteItem route={route} onTouchTap={onTouchTap} />
       </MuiThemeProvider>
     );
     routeItemNode = ReactDOM.findDOMNode(routeItem);
@@ -32,4 +34,10 @@ describe('RouteItem', () => {
   it('should display the route price', () => {
     expect(routeItemNode.textContent).toMatch((route.price.amount/100).toFixed(2));
   });
+
+  it('should execute onTouchTap prop when clicked', () => {
+    const _routeItem = TestUtils.findRenderedComponentWithType(routeItem, RouteItem)
+    _routeItem.handleTouchTap()
+    expect(onTouchTap).toBeCalledWith(route)
+  })
 });
