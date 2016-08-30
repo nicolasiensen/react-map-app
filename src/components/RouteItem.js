@@ -73,4 +73,11 @@ class RouteItem extends Component {
   }
 }
 
+RouteItem.propTypes = {
+  route: React.PropTypes.object.isRequired,
+  onTouchTap: React.PropTypes.func,
+  style: React.PropTypes.object,
+  disabled: React.PropTypes.bool
+};
+
 export default RouteItem;

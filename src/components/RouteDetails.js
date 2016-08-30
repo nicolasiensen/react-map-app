@@ -28,4 +28,9 @@ class RouteDetails extends Component {
   }
 }
 
+RouteDetails.propTypes = {
+  route: React.PropTypes.object.isRequired,
+  onCancelTouchTap: React.PropTypes.func.isRequired
+};
+
 export default RouteDetails;

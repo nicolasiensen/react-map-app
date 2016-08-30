@@ -54,4 +54,9 @@ class Map extends Component {
   }
 }
 
+Map.propTypes = {
+  segments: React.PropTypes.array.isRequired,
+  style: React.PropTypes.object
+};
+
 export default Map;

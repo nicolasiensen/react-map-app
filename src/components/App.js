@@ -39,7 +39,7 @@ class App extends Component {
         <div style={{backgroundColor: grey200, flex: '1'}} className={css(styles.container)}>
           <div style={{maxWidth: '900px', margin: '0 auto'}}>
             {
-              !!this.state.selectedRoute
+              this.state.selectedRoute
               ? <RouteDetails route={this.state.selectedRoute} onCancelTouchTap={this.showRouteList} />
               : <RouteList routes={data.routes} onRouteSelect={this.showRouteDetails} />
             }

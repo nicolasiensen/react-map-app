@@ -5,15 +5,6 @@ import Paper from 'material-ui/Paper';
 import RouteItem from './RouteItem';
 
 class RouteList extends Component {
-  constructor (props) {
-    super(props)
-    this.selectRoute = this.selectRoute.bind(this)
-  }
-
-  selectRoute (route) {
-    this.props.onRouteSelect(route)
-  }
-
   render() {
     return (
       <Paper>
@@ -25,6 +16,11 @@ class RouteList extends Component {
       </Paper>
     )
   }
+}
+
+RouteList.propTypes = {
+  onRouteSelect: React.PropTypes.func.isRequired,
+  routes: React.PropTypes.array.isRequired
 }
 
 export default RouteList;

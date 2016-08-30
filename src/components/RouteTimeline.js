@@ -45,4 +45,8 @@ class RouteTimeline extends Component {
   }
 }
 
+RouteTimeline.propTypes = {
+  segments: React.PropTypes.array.isRequired
+}
+
 export default RouteTimeline;

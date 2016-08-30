@@ -50,4 +50,11 @@ class SegmentIcon extends Component {
   }
 }
 
+SegmentIcon.propTypes = {
+  color: React.PropTypes.string.isRequired,
+  travelMode: React.PropTypes.string.isRequired,
+  style: React.PropTypes.object,
+  name: React.PropTypes.string
+}
+
 export default SegmentIcon;
