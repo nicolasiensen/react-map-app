@@ -8,6 +8,9 @@ import data from './../src/routes.json';
 import RouteItem from './../src/components/RouteItem';
 import SegmentIcon from './../src/components/SegmentIcon';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 const route = data.routes[0];
 let routeItem, routeItemNode, onTouchTap;
 

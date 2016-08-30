@@ -5,6 +5,9 @@ import RouteList from '../src/components/RouteList';
 import RouteDetails from '../src/components/RouteDetails';
 import data from './../src/routes.json'
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 window.google = {
   maps: {
     Map: (
