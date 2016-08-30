@@ -26,7 +26,8 @@ window.google = {
       encoding: {
         decodePath: () => []
       }
-    }
+    },
+    Marker: class Marker {}
   }
 }
 
