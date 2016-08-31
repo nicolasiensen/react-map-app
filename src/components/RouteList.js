@@ -10,7 +10,9 @@ class RouteList extends Component {
       <Paper>
         <List>
           {
-            this.props.routes.map((route, i) => <RouteItem route={route} onTouchTap={this.selectRoute} key={i} />)
+            this.props.routes.map((route, i) => (
+              <RouteItem route={route} onTouchTap={this.props.onRouteSelect} key={i} />
+            ))
           }
         </List>
       </Paper>
