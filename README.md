@@ -12,7 +12,7 @@ If everything goes right, you should see the project running at [http://localhos
 
 ## Features
 - Improve the readability of the path in the map, some route colors are not easy to see;
-- Change MaterialUI theme to match Door2Door's brand colors;
+- Change Material Design theme to match Door2Door's brand colors;
 - Use Google Maps API as a NPM dependency, instead of including it into the `window` object.
 
 ## Tests
